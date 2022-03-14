@@ -26,10 +26,10 @@
                     <th>{{$entreprise->date_creation}}</th>
                     <th>{{$entreprise->registre}}</th>
                     <th>{{$entreprise->ninea}}</th>
-                    <th>{{$entreprise->siteWeb}}</th>
-                    <th>{{$entreprise->quartier->nom}}</th>
+                    <th>{{$entreprise->site}}</th>
+                    <th><a href="entreprises/quartier/{{$entreprise->quartier->id}}">{{$entreprise->quartier->nom}}</a></th>
                     <th>
-                        <i class="bi bi-eye-fill text-secondary"></i>
+                        <a href="{{route('entreprises.show',[$entreprise])}}"<i class="bi bi-eye-fill text-secondary"></i></a>
                         <i class="bi bi-screwdriver text-success"></i> 
                         <i class="bi bi-x-circle text-danger"></i></th>
                 </tr>
