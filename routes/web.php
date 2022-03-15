@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\PaysController;
 use App\Http\Controllers\EntrepriseController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +13,15 @@ use App\Http\Controllers\EntrepriseController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
 Route::get('/',[EntrepriseController::class,'index'])->name('entreprises.liste');
 Route::get('entreprises',[EntrepriseController::class,'index']);
 Route::get('entreprises/create',[EntrepriseController::class,'create']);
@@ -22,5 +29,3 @@ Route::post('entreprises/store',[EntrepriseController::class,'store']);
 Route::get('entreprises/{entreprise}',[EntrepriseController::class,'show'])->name('entreprises.show');
 Route::get('entreprises/delete/{entreprise}',[EntrepriseController::class,'delete'])->name('entreprises.delete');
 Route::get('entreprises/quartier/{id}',[EntrepriseController::class,'show_related']);
-
-

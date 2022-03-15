@@ -25,7 +25,7 @@
                     <th>{{$entreprise->registre}}</th>
                     <th>{{$entreprise->ninea}}</th>
                     <th>{{$entreprise->site}}</th>
-                    <th>{{$entreprise->quartier->nom}}</th>
+                    <th>{{$entreprise->quartier->nom}}:senegal:</th>
                     <th>
                         <i class="bi bi-screwdriver text-success"></i> 
                         <i class="bi bi-x-circle text-danger"></i></th>
