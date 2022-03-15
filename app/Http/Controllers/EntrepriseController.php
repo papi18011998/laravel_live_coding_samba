@@ -23,6 +23,10 @@ class EntrepriseController extends Controller
     public function show(Entreprise $entreprise){
         return view('entreprise.show',compact('entreprise'));
     }
+    public function delete(Entreprise $entreprise){
+            $entreprise->delete();
+            return redirect()->route('entreprises.liste');
+    }
     public function show_related($id){
         $quartier = Quartier::findOrFail($id);
         return view('entreprise.by_quartier',['quartier'=>$quartier]);

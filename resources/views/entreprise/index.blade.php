@@ -31,7 +31,7 @@
                     <th>
                         <a href="{{route('entreprises.show',[$entreprise])}}"<i class="bi bi-eye-fill text-secondary"></i></a>
                         <i class="bi bi-screwdriver text-success"></i> 
-                        <i class="bi bi-x-circle text-danger"></i></th>
+                        <a href="{{route('entreprises.delete',[$entreprise])}}"<i class="bi bi-x-circle text-danger"></i></a>
                 </tr>
                 @endforeach
 
